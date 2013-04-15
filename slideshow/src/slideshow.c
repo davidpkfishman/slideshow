@@ -19,7 +19,7 @@ BmpContainer _alex, _leo, _arlene;
 void setupTextLayer( TextLayer *layer, Window *parent, int x, int y, int width, int height, GFont font )
 {	
     text_layer_init(layer, window.layer.frame);
-    text_layer_set_text_color(layer, GColorWhite);
+    text_layer_set_text_color(layer, GColorBlack);
     text_layer_set_background_color(layer, GColorClear);
     layer_set_frame(&layer->layer, GRect(x, y, width, height));
     text_layer_set_font(layer, font );
@@ -89,6 +89,7 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t)
     }
 
 
+
     //
     // set the date - only changing it when the day changes
     // format strings here: http://www.gnu.org/software/emacs/manual/html_node/elisp/Time-Parsing.html
@@ -113,6 +114,14 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t)
 
 }
 
+static void handle_deinit(AppContextRef ctx)
+{
+  (void)ctx;
+  bmp_deinit_container(&_alex);
+  bmp_deinit_container(&_leo);
+  bmp_deinit_container(&_arlene);
+}
+
 //
 // main
 //
@@ -121,6 +130,7 @@ void pbl_main(void *params)
     PebbleAppHandlers handlers =
     {
         .init_handler = &handle_init,
+        .deinit_handler = &handle_deinit,
         .tick_info =
         {
             .tick_handler = &handle_minute_tick,
