@@ -1,0 +1,45 @@
+
+{"friendlyVersion": "VERSION",
+ "versionDefName": "APP_RESOURCES",
+ "media": [
+        {
+        "type": "png",
+        "defName": "IMAGE_MENU_ICON",
+        "file": "images/menu_icon_simplicity.png"
+        },
+
+	{
+        "type": "png",
+        "defName": "IMAGE_ALEX",
+        "file": "images/alex.png"
+	},
+
+
+        {
+        "type": "png",
+        "defName": "IMAGE_LEO",
+        "file": "images/leo.png"
+        },
+
+        {
+        "type": "png",
+        "defName": "IMAGE_ARLENE",
+        "file": "images/arlene.png"
+        },
+
+	
+        {
+        "type": "font",
+        "defName": "FONT_ROBOTO_CONDENSED_21",
+        "file": "fonts/Roboto-Condensed.ttf"
+        },
+
+        {
+        "type": "font",
+        "characterRegex": "[:0-9]",
+        "defName": "FONT_ROBOTO_BOLD_SUBSET_49",
+        "file": "fonts/Roboto-Bold.ttf"
+        }
+
+ ]
+}
